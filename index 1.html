@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f8f1e6">
+<title>A Celebration of Love | Wedding Invitation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--ivory:#fbf7ef;--paper:#fffdf8;--wine:#762f42;--gold:#b58a4a;--ink:#453a35;--muted:#796d64}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);font-family:Montserrat,sans-serif;background:#eee5d8}button,input,textarea{font:inherit}button{cursor:pointer}
+.page{min-height:100vh;position:relative;overflow:hidden;background:radial-gradient(ellipse at top,#fffdf8 0%,#f7f0e5 55%,#eadcc9 100%)}
+.page:before{content:"";position:absolute;inset:15px;border:1px solid rgba(181,138,74,.55);pointer-events:none}.page:after{content:"";position:absolute;inset:23px;border:1px solid rgba(181,138,74,.22);pointer-events:none}
+.cover{display:flex;align-items:center;justify-content:center;text-align:center;padding:70px 28px}.cover-inner{position:relative;z-index:1;max-width:780px;width:100%;padding:45px 25px}
+.cross{font-family:Georgia,serif;color:var(--gold);font-size:32px;margin-bottom:14px}.kicker{font-size:10px;letter-spacing:5px;text-transform:uppercase;color:var(--wine);font-weight:600}
+h1,h2{font-family:"Cormorant Garamond",serif;font-weight:500}.cover h1{font-size:clamp(48px,9vw,88px);line-height:.95;margin:22px 0 12px;color:var(--wine)}
+.script{font-family:"Great Vibes",cursive;color:var(--gold);font-size:clamp(34px,6vw,54px)}.names{font-family:"Cormorant Garamond",serif;font-size:clamp(28px,5vw,43px);margin:22px 0 12px}.amp{font-family:"Great Vibes",cursive;color:var(--gold);font-size:1.35em;padding:0 9px}
+.cover-copy{max-width:550px;margin:20px auto;color:var(--muted);font-size:12px;line-height:2;letter-spacing:1.3px}.eventline{font-family:"Cormorant Garamond",serif;font-size:22px;color:var(--wine);margin:23px 0 30px}
+.primary{border:0;background:var(--wine);color:white;padding:14px 28px;letter-spacing:2px;text-transform:uppercase;font-size:10px;border-radius:2px;box-shadow:0 7px 20px #762f422b;transition:.25s}.primary:hover{transform:translateY(-3px);background:#5d2233}
+.small-note{font-size:9px;letter-spacing:2px;color:#8c7a69;margin-top:24px;text-transform:uppercase}.corner{position:absolute;color:var(--gold);font-family:Georgia;font-size:35px;opacity:.8}.tl{top:45px;left:42px}.tr{top:45px;right:42px}.bl{bottom:45px;left:42px}.br{bottom:45px;right:42px}
+.letter-page{display:none;padding:65px 28px 80px}.letter-wrap{max-width:900px;margin:auto;position:relative;z-index:1;background:rgba(255,253,248,.88);border:1px solid #d9c39e;padding:clamp(28px,6vw,65px);box-shadow:0 18px 60px #60452a12;text-align:center}
+.letter-wrap h2{font-size:clamp(42px,7vw,65px);color:var(--wine);margin:10px 0}.letter-text{max-width:680px;margin:28px auto 35px;font-family:"Cormorant Garamond",serif;font-size:21px;line-height:1.7;color:#5c5049}.letter-text p{margin:0 0 17px}
+.photo-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;max-width:700px;margin:35px auto}.photo-frame{background:#fff;padding:10px 10px 14px;border:1px solid #ddc9a7;box-shadow:0 8px 24px #59452a14}.photo-frame img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;background:#eee5d8}.photo-caption{font-family:"Cormorant Garamond",serif;color:var(--wine);font-size:19px;margin-top:10px}
+.signature{font-family:"Great Vibes",cursive;color:var(--wine);font-size:38px;margin-top:15px}.navrow{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:24px}.secondary{border:1px solid var(--gold);background:transparent;color:var(--wine);padding:12px 20px;font-size:10px;letter-spacing:1.5px;text-transform:uppercase}
+#fireworks{position:fixed;inset:0;pointer-events:none;z-index:5}.admin-trigger{position:fixed;right:15px;bottom:15px;z-index:10;border:1px solid #b58a4a;background:#fffdf0e8;color:#762f42;padding:10px 13px;font-size:10px;letter-spacing:1px}
+.modal{display:none;position:fixed;inset:0;background:#21191bd9;z-index:20;align-items:center;justify-content:center;padding:16px;overflow:auto}.modal-box{background:var(--paper);padding:26px;width:min(540px,100%);max-height:92vh;overflow:auto;border:1px solid var(--gold);box-shadow:0 20px 60px #0004}
+.modal-box h3{font-family:"Cormorant Garamond",serif;font-size:30px;color:var(--wine);margin:0 0 8px}.modal-box p{font-size:12px;line-height:1.7;color:var(--muted)}
+.modal-box label{display:block;font-size:10px;letter-spacing:1px;margin:13px 0 6px}.modal-box input,.modal-box textarea{width:100%;padding:11px;border:1px solid #d8c8b0;background:white;color:var(--ink)}.modal-box textarea{min-height:95px;resize:vertical}
+.admin-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:17px}.status{font-size:11px;min-height:18px;color:var(--wine);margin-top:12px}.upload-panel{display:none;border-top:1px solid #e3d6c2;margin-top:18px;padding-top:12px}.upload-row{margin:12px 0}.upload-row input{font-size:11px}.field-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 12px}.footer{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#947e66;margin-top:35px}
+@media(max-width:600px){.photo-grid{gap:12px}.photo-frame{padding:6px 6px 10px}.photo-caption{font-size:16px}.letter-text{font-size:19px}.corner{font-size:25px}.tl{left:30px;top:32px}.tr{right:30px;top:32px}.bl{left:30px;bottom:32px}.br{right:30px;bottom:32px}.field-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<canvas id="fireworks"></canvas>
+
+<section class="page cover" id="cover">
+ <span class="corner tl">❧</span><span class="corner tr">❧</span><span class="corner bl">❧</span><span class="corner br">❧</span>
+ <div class="cover-inner">
+  <div class="cross">✝</div><div class="script">In the presence of God and those we love</div>
+  <div class="kicker">Together with our families</div>
+  <h1>A Celebration<br>of Love</h1>
+  <div class="script">joyfully invite you to witness</div>
+  <div class="names"><span id="coverName1">Amelia Rose</span> <span class="amp">&</span> <span id="coverName2">Daniel James</span></div>
+  <p class="cover-copy">AS WE JOIN OUR LIVES IN THE SACRAMENT OF HOLY MATRIMONY, WE WOULD BE HONOURED BY YOUR PRESENCE AND BLESSINGS.</p>
+  <div class="eventline"><span id="coverDate">Saturday, 18 December 2027</span> · <span id="coverTime">4:00 PM</span></div>
+  <div class="ornament" style="color:var(--gold);letter-spacing:9px">✧ ❦ ✧</div>
+  <p class="cover-copy" id="coverVenue">ST. MARY'S CHURCH · MYSURU</p>
+  <button class="primary" onclick="showLetter()">Open Your Invitation</button>
+  <div class="small-note">A little love, a lifetime of memories</div>
+ </div>
+</section>
+
+<section class="page letter-page" id="letter">
+ <div class="letter-wrap">
+  <div class="cross">✝</div><div class="kicker">With grateful hearts and joyful spirits</div>
+  <h2 id="letterHeading">Dear Family & Friends</h2>
+  <div class="script">Please celebrate this beautiful beginning with us</div>
+  <div class="letter-text" id="letterMessage">
+   <p>Some of life's loveliest moments become even more special when shared with the people we love.</p>
+   <p>As we join our hands, hearts and dreams in marriage, we invite you to be part of a day that means the world to us. Your presence, prayers and blessings will make our celebration complete.</p>
+   <p>Come share the laughter, the happy tears, the music and the memories. We cannot wait to celebrate this new chapter with you!</p>
+   <p>With love and gratitude,</p>
+  </div>
+  <div class="photo-grid">
+   <div class="photo-frame"><img id="photo1" alt="Wedding photograph one" src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=900&q=85"><div class="photo-caption">A moment to remember</div></div>
+   <div class="photo-frame"><img id="photo2" alt="Wedding photograph two" src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=900&q=85"><div class="photo-caption">Our forever begins</div></div>
+  </div>
+  <div class="signature" id="signatureNames">Amelia & Daniel</div>
+  <div class="footer"><span id="footerDate">18 · 12 · 2027</span> &nbsp; ✧ &nbsp; With love, always</div>
+  <div class="navrow"><button class="secondary" onclick="showCover()">Back to cover</button><button class="primary" onclick="celebrate()">Celebrate with us ✨</button></div>
+ </div>
+</section>
+
+<button class="admin-trigger" onclick="openAdmin()">✦ Admin</button>
+<div class="modal" id="adminModal" role="dialog" aria-modal="true" aria-labelledby="adminTitle">
+ <div class="modal-box">
+  <h3 id="adminTitle">Private Admin Access</h3>
+  <p>Sign in to edit the invitation details and upload or replace the two wedding photos. Guests can view the invitation without signing in.</p>
+  <div id="loginFields">
+   <label for="adminEmail">ADMIN EMAIL</label><input id="adminEmail" type="email" autocomplete="username" placeholder="admin@example.com">
+   <label for="adminPassword">PASSWORD</label><input id="adminPassword" type="password" autocomplete="current-password" placeholder="Your admin password">
+  </div>
+  <div class="admin-actions">
+   <button class="primary" id="loginButton" onclick="adminLogin()">Sign in</button>
+   <button class="secondary" onclick="closeAdmin()">Close</button>
+   <button class="secondary" id="logoutBtn" style="display:none" onclick="adminLogout()">Log out</button>
+  </div>
+  <div class="status" id="adminStatus" aria-live="polite"></div>
+  <div class="upload-panel" id="uploadPanel">
+   <p><strong>Invitation editor</strong> — changes are saved online for every visitor.</p>
+   <div class="field-grid">
+    <div><label for="name1">PARTNER 1 NAME</label><input id="name1" maxlength="80"></div>
+    <div><label for="name2">PARTNER 2 NAME</label><input id="name2" maxlength="80"></div>
+    <div><label for="weddingDate">WEDDING DATE</label><input id="weddingDate" maxlength="100"></div>
+    <div><label for="weddingTime">WEDDING TIME</label><input id="weddingTime" maxlength="60"></div>
+   </div>
+   <label for="weddingVenue">CHURCH / VENUE</label><input id="weddingVenue" maxlength="160">
+   <label for="weddingMessage">INVITATION MESSAGE (one paragraph per line)</label><textarea id="weddingMessage" maxlength="1800"></textarea>
+   <div class="admin-actions"><button class="primary" onclick="saveSettings()">Save invitation details</button></div>
+   <div class="upload-row"><label for="upload1">PHOTO SLOT 1</label><input id="upload1" type="file" accept="image/*" onchange="uploadPhoto(1,this)"></div>
+   <div class="upload-row"><label for="upload2">PHOTO SLOT 2</label><input id="upload2" type="file" accept="image/*" onchange="uploadPhoto(2,this)"></div>
+  </div>
+ </div>
+</div>
+
+<!-- SETUP: Add your own Supabase Project URL and Publishable key below.
+     Do not use a secret/service_role key in browser code. See SETUP.txt for the one-time Supabase setup. -->
+<script>
+const SUPABASE_URL = "YOUR_SUPABASE_PROJECT_URL";
+const SUPABASE_PUBLISHABLE_KEY = "YOUR_SUPABASE_PUBLISHABLE_KEY";
+const PHOTO_BUCKET = "wedding-photos";
+</script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+const configured = SUPABASE_URL.startsWith("https://") && !SUPABASE_URL.includes("YOUR_") && SUPABASE_PUBLISHABLE_KEY && !SUPABASE_PUBLISHABLE_KEY.includes("YOUR_");
+const db = configured ? window.supabase.createClient(SUPABASE_URL,SUPABASE_PUBLISHABLE_KEY) : null;
+const defaults = {
+ name1:"Amelia Rose",name2:"Daniel James",date:"Saturday, 18 December 2027",time:"4:00 PM",
+ venue:"St. Mary's Church · Mysuru",
+ message:"Some of life's loveliest moments become even more special when shared with the people we love.\\nAs we join our hands, hearts and dreams in marriage, we invite you to be part of a day that means the world to us. Your presence, prayers and blessings will make our celebration complete.\nCome share the laughter, the happy tears, the music and the memories. We cannot wait to celebrate this new chapter with you!\nWith love and gratitude,"
+};
+function showLetter(){document.getElementById("cover").style.display="none";document.getElementById("letter").style.display="block";window.scrollTo(0,0)}
+function showCover(){document.getElementById("letter").style.display="none";document.getElementById("cover").style.display="flex";window.scrollTo(0,0)}
+function closeAdmin(){document.getElementById("adminModal").style.display="none"}
+function openAdmin(){document.getElementById("adminModal").style.display="flex";document.getElementById("adminStatus").textContent=db?"":"Setup required: add your Supabase Project URL and Publishable key, then complete SETUP.txt."}
+document.getElementById("adminModal").addEventListener("click",e=>{if(e.target.id==="adminModal")closeAdmin()});
+function applySettings(s){
+ const v={...defaults,...(s||{})};
+ document.getElementById("coverName1").textContent=v.name1;document.getElementById("coverName2").textContent=v.name2;
+ document.getElementById("coverDate").textContent=v.date;document.getElementById("coverTime").textContent=v.time;
+ document.getElementById("coverVenue").textContent=v.venue;document.getElementById("signatureNames").textContent=v.name1+" & "+v.name2;
+ document.getElementById("footerDate").textContent=v.date;
+ document.getElementById("letterMessage").replaceChildren(...v.message.split("\n").filter(Boolean).map(line=>{const p=document.createElement("p");p.textContent=line;return p;}));
+}
+async function loadSettings(){
+ applySettings(defaults);
+ if(!db)return;
+ const {data,error}=await db.from("wedding_settings").select("*").eq("id",1).maybeSingle();
+ if(!error&&data)applySettings(data);
+}
+async function adminLogin(){
+ const status=document.getElementById("adminStatus");
+ if(!db){status.textContent="Supabase is not configured. Add your Project URL and Publishable key.";return}
+ status.textContent="Signing in…";
+ const {error}=await db.auth.signInWithPassword({email:document.getElementById("adminEmail").value,password:document.getElementById("adminPassword").value});
+ if(error){status.textContent="Login failed: "+error.message;return}
+ await showEditor();
+}
+async function showEditor(){
+ document.getElementById("loginFields").style.display="none";document.getElementById("loginButton").style.display="none";
+ document.getElementById("logoutBtn").style.display="inline-block";document.getElementById("uploadPanel").style.display="block";
+ const {data,error}=await db.from("wedding_settings").select("*").eq("id",1).maybeSingle();
+ const s={...defaults,...(data||{})};
+ document.getElementById("name1").value=s.name1;document.getElementById("name2").value=s.name2;
+ document.getElementById("weddingDate").value=s.date;document.getElementById("weddingTime").value=s.time;
+ document.getElementById("weddingVenue").value=s.venue;document.getElementById("weddingMessage").value=s.message;
+ document.getElementById("adminStatus").textContent=error?"Signed in. Could not load saved details: "+error.message:"Signed in. You can edit the invitation.";
+}
+async function adminLogout(){
+ if(db)await db.auth.signOut();
+ document.getElementById("loginFields").style.display="block";document.getElementById("loginButton").style.display="inline-block";
+ document.getElementById("uploadPanel").style.display="none";document.getElementById("logoutBtn").style.display="none";
+ document.getElementById("adminPassword").value="";document.getElementById("adminStatus").textContent="Signed out.";
+}
+async function saveSettings(){
+ const status=document.getElementById("adminStatus");const {data:{user}}=await db.auth.getUser();
+ if(!user){status.textContent="Please sign in again.";return}
+ const s={id:1,name1:document.getElementById("name1").value.trim(),name2:document.getElementById("name2").value.trim(),
+ date:document.getElementById("weddingDate").value.trim(),time:document.getElementById("weddingTime").value.trim(),
+ venue:document.getElementById("weddingVenue").value.trim(),message:document.getElementById("weddingMessage").value.trim(),updated_at:new Date().toISOString()};
+ if(!s.name1||!s.name2||!s.date||!s.time||!s.venue||!s.message){status.textContent="Please fill in every invitation field.";return}
+ status.textContent="Saving…";
+ const {error}=await db.from("wedding_settings").upsert(s);
+ if(error){status.textContent="Save failed: "+error.message;return}
+ applySettings(s);status.textContent="Saved! All visitors will now see the updated invitation.";
+}
+async function uploadPhoto(slot,input){
+ const file=input.files&&input.files[0];if(!file)return;
+ const status=document.getElementById("adminStatus");
+ if(!db){status.textContent="Supabase is not configured.";return}
+ if(!file.type.startsWith("image/")){status.textContent="Please choose an image file.";return}
+ if(file.size>8*1024*1024){status.textContent="Choose an image smaller than 8 MB.";return}
+ const {data:{user}}=await db.auth.getUser();if(!user){status.textContent="Please sign in again.";return}
+ status.textContent="Uploading photo "+slot+"…";
+ const path="photo-"+slot;
+ const {error}=await db.storage.from(PHOTO_BUCKET).upload(path,file,{upsert:true,contentType:file.type,cacheControl:"0"});
+ if(error){status.textContent="Upload failed: "+error.message;return}
+ const {data}=db.storage.from(PHOTO_BUCKET).getPublicUrl(path);
+ document.getElementById("photo"+slot).src=data.publicUrl+"?t="+Date.now();
+ status.textContent="Photo "+slot+" uploaded and updated.";
+}
+async function loadPhotos(){
+ if(!db)return;
+ const {data:files,error}=await db.storage.from(PHOTO_BUCKET).list();
+ if(error||!files)return;
+ [1,2].forEach(slot=>{
+  if(files.some(f=>f.name==="photo-"+slot)){
+   const {data}=db.storage.from(PHOTO_BUCKET).getPublicUrl("photo-"+slot);
+   document.getElementById("photo"+slot).src=data.publicUrl+"?t="+Date.now();
+  }
+ });
+}
+async function celebrate(){burst();setTimeout(burst,450);setTimeout(burst,900)}
+// Colourful lightweight fireworks. They run briefly on entry and when the celebration button is pressed.
+const canvas=document.getElementById("fireworks"),ctx=canvas.getContext("2d");let particles=[];
+function resizeCanvas(){canvas.width=innerWidth*devicePixelRatio;canvas.height=innerHeight*devicePixelRatio;ctx.setTransform(devicePixelRatio,0,0,devicePixelRatio,0,0)}
+addEventListener("resize",resizeCanvas);resizeCanvas();
+function burst(){const x=Math.random()*innerWidth,y=80+Math.random()*innerHeight*.55,hues=[2,35,48,125,185,220,285,330],h=hues[Math.floor(Math.random()*hues.length)];
+ for(let i=0;i<65;i++){const a=Math.PI*2*i/65,spd=1.2+Math.random()*4;particles.push({x,y,vx:Math.cos(a)*spd,vy:Math.sin(a)*spd,life:55+Math.random()*25,max:80,hue:h,size:1.5+Math.random()*2})}}
+function animate(){ctx.clearRect(0,0,innerWidth,innerHeight);particles=particles.filter(p=>p.life>0);for(const p of particles){p.x+=p.vx;p.y+=p.vy;p.vy+=.035;p.vx*=.99;p.life--;ctx.globalAlpha=Math.max(0,p.life/p.max);ctx.fillStyle=`hsl(${p.hue},95%,65%)`;ctx.beginPath();ctx.arc(p.x,p.y,p.size,0,Math.PI*2);ctx.fill()}ctx.globalAlpha=1;requestAnimationFrame(animate)}
+animate();setTimeout(burst,600);setTimeout(burst,1500);setTimeout(burst,2400);
+loadSettings();loadPhotos();
+</script>
+</body>
+</html>
